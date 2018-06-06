@@ -5,6 +5,5 @@
   roles:
     - essentials
     - react
-    - ysz.jdk8-and-maven
     - spring-web
     - python

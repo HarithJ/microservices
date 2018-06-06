@@ -1,4 +1,15 @@
-- name: Install project dependencies for Java
+- name: Install latest version of "openjdk-8-jdk" ignoring "install-recommends"
+  apt:
+    name: openjdk-8-jdk
+    state: latest
+    install_recommends: no
+
+- name: Install maven
+  apt:
+    name: maven
+    state: present
+
+- name: Install spring-web project dependencies
   shell:
     chdir: "{{ project_dir }}/sa-webapp"
     cmd:
