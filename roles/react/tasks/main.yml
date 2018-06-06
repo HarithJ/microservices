@@ -1,0 +1,22 @@
+- name: Install project dependencies
+  shell:
+    chdir: {{ project_dir }}/sa-frontend
+    cmd:
+      sudo npm install
+
+- name: Build the app for production
+  shell:
+    chdir: {{ project_dir }}/sa-frontend
+    cmd:
+      npm run build
+
+- name: move the react build contents to the nginx folder
+  copy:
+    src: {{ project_dir }}/sa-frontend/build/
+    dest: /usr/share/nginx/html
+
+- name: start config-nginx Service
+  systemd:
+    name: config-nginx
+    state: started
+    enabled: yes

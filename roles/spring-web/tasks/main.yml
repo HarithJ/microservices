@@ -1,0 +1,5 @@
+- name: Install project dependencies for Java
+  shell:
+    chdir: {{ project_dir }}/sa-webapp
+    cmd:
+      sudo mvn install
