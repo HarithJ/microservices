@@ -47,4 +47,4 @@
   shell:
     chdir: "{{ project_dir }}/sa-logic/sa"
     cmd:
-      python sentiment_analysis.py
+      python3.6 sentiment_analysis.py
