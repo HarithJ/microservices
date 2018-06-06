@@ -2,29 +2,9 @@
 - hosts: all
   become: yes
   become_user: root
-
-  tasks:
-    - name: Update apt-get
-      apt:
-        update_cache: yes
-
-    - name: Add node
-      shell: curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-
-    - name: Installing nodejs, nginx, build-essential
-      apt:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - nodejs
-        - nginx
-        - build-essential
-
-    - name: create project directory
-      path: /var/project
-      state: directory
-
-    - name: clone the microservice repo
-      git:
-        repo: https://github.com/rinormaloku/k8s-mastery.git
-        dest: /var/project/microservice-app
+  roles:
+    - essentials
+    - react
+    - ysz.jdl8-and-maven
+    - spring-web
+    - python
