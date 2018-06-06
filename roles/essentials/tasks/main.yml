@@ -27,3 +27,4 @@
   git:
     repo: https://github.com/rinormaloku/k8s-mastery.git
     dest: /var/project/microservice-app
+    force: yes
