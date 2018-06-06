@@ -17,6 +17,6 @@
 
 - name: start config-nginx Service
   systemd:
-    name: config-nginx
+    name: nginx
     state: started
     enabled: yes
