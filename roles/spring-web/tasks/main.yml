@@ -3,3 +3,6 @@
     chdir: {{ project_dir }}/sa-webapp
     cmd:
       sudo mvn install
+
+- name: define property of where our python app will be running
+  command: java -jar sentiment-analysis-web-0.0.1-SNAPSHOT.jar --sa.logic.api.url=http://localhost:5000
