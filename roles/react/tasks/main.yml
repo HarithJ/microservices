@@ -1,6 +1,6 @@
 - name: Install project dependencies
   shell:
-    chdir: "{{ project_dir }}"/sa-frontend
+    chdir: "{{ project_dir }}/sa-frontend"
     cmd:
       sudo npm install
 
