@@ -6,13 +6,13 @@
 
 - name: Build the app for production
   shell:
-    chdir: "{{ project_dir }}"/sa-frontend
+    chdir: "{{ project_dir }}/sa-frontend"
     cmd:
       npm run build
 
 - name: move the react build contents to the nginx folder
   copy:
-    src: "{{ project_dir }}"/sa-frontend/build/
+    src: "{{ project_dir }}/sa-frontend/build/"
     dest: /usr/share/nginx/html
 
 - name: start config-nginx Service

@@ -38,18 +38,18 @@
 
 - name: Install requirements into venv
   pip:
-    requirements: "{{ project_dir }}"/sa-logic/sa/requirements.txt
-    virtualenv: /"{{ project_dir }}"/sa-logic/venv
+    requirements: "{{ project_dir }}/sa-logic/sa/requirements.txt"
+    virtualenv: /"{{ project_dir }}/sa-logic/venv"
     virtualenv_python: python3.6
 
 - name: install textblob.download_corpora module
   shell:
-    chdir: "{{ project_dir }}"/sa-logic/sa
+    chdir: "{{ project_dir }}/sa-logic/sa"
     cmd:
       python -m textblob.download_corpora
 
 - name: install textblob.download_corpora module
   shell:
-    chdir: "{{ project_dir }}"/sa-logic/sa
+    chdir: "{{ project_dir }}/sa-logic/sa"
     cmd:
       python sentiment_analysis.py
