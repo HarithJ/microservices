@@ -19,8 +19,9 @@
     - build-essential
 
 - name: create project directory
-  path: /var/project
-  state: directory
+  file:
+    path: /var/project
+    state: directory
 
 - name: clone the microservice repo
   git:
